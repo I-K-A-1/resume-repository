@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I.K.A | Personal Portfolio & Resume</title>
+
+  <!-- Primary Luxury Serif (Silian Rail / Garamond Aesthetic) & Clean Sans Fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Subtle Centered Monogram Watermark -->
+  <div class="watermark" aria-hidden="true">I.K.A</div>
+
+  <!-- Camera Viewfinder HUD Navigation Bar -->
+  <header id="viewfinder-hud">
+    <nav class="nav-container">
+      <div class="brand-mark">
+        <span class="rec-dot"></span>
+        <span class="monogram-text">I.K.A</span>
+        <span class="lens-spec">f/1.4 • 85MM</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Profile</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+
+      <!-- Portrait Bokeh Toggle -->
+      <button id="focus-toggle" class="aperture-btn" type="button" title="Toggle Portrait Depth-of-Field Blur">
+        <span class="aperture-icon">◎</span>
+        <span id="focus-status">PORTRAIT FOCUS: ON</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Resume Container -->
+  <main class="dossier-wrapper" id="resume-container">
+
+    <!-- Section 1: Hero / Executive Summary -->
+    <section id="hero" class="focus-card is-focused" tabindex="0">
+      <span class="corner-tl"></span><span class="corner-tr"></span>
+      <span class="corner-bl"></span><span class="corner-br"></span>
+
+      <div class="hero-header">
+        <p class="eyebrow">CURRICULUM VITAE // EXECUTIVE DOSSIER</p>
+        <h1 class="silian-title">ISHAN ANAND</h1>
+        <p class="subtitle">BBA Digital Business & Entrepreneurship • Strategy & Digital Product Builder</p>
+      </div>
+
+      <p class="summary-text">
+        Detail-oriented business and technology strategist combining analytical rigor with refined digital craftsmanship. Passionate about building intuitive web experiences, data-driven business models, and scalable digital solutions.
+      </p>
+
+      <div class="contact-strip">
+        <a href="mailto:ishan.anand@example.com" class="silver-pill">✉ ishan.anand@example.com</a>
+        <a href="https://github.com" target="_blank" class="silver-pill">⌘ GitHub Profile</a>
+        <a href="https://linkedin.com" target="_blank" class="silver-pill">in LinkedIn</a>
+        <span class="silver-pill">⌖ Bengaluru / Udupi, India</span>
+      </div>
+    </section>
+
+    <!-- Section 2: Experience (Timeline Depth Rail) -->
+    <section id="experience" class="focus-card" tabindex="0">
+      <span class="corner-tl"></span><span class="corner-tr"></span>
+      <span class="corner-bl"></span><span class="corner-br"></span>
+
+      <div class="section-header">
+        <span class="frame-index">01 // TRACK RECORD</span>
+        <h2 class="silian-heading">EXPERIENCE & LEADERSHIP</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-meta">
+            <span class="date-badge">2025 – PRESENT</span>
+            <h3 class="role-title">DIGITAL STRATEGY & WEB DEVELOPMENT LEAD</h3>
+            <p class="org-name">Student Entrepreneurship Cell • IIM Bangalore (BBA DBE)</p>
+          </div>
+          <ul class="detail-list">
+            <li>Spearheaded digital campaign architecture and front-end web prototypes for campus startup initiatives.</li>
+            <li>Collaborated with cross-functional teams to streamline user onboarding flows and brand positioning.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-meta">
+            <span class="date-badge">2024 – 2025</span>
+            <h3 class="role-title">BUSINESS OPERATIONS & RESEARCH INTERN</h3>
+            <p class="org-name">Venture Growth Consulting</p>
+          </div>
+          <ul class="detail-list">
+            <li>Conducted competitive market audits and financial benchmarking across emerging D2C and SaaS verticals.</li>
+            <li>Designed executive presentation decks and interactive dashboards to support seed-stage pitch decks.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 3: Featured Projects (Grid Layout) -->
+    <section id="projects" class="focus-card" tabindex="0">
+      <span class="corner-tl"></span><span class="corner-tr"></span>
+      <span class="corner-bl"></span><span class="corner-br"></span>
+
+      <div class="section-header">
+        <span class="frame-index">02 // SELECTED WORKS</span>
+        <h2 class="silian-heading">FEATURED PROJECTS</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-subcard">
+          <div class="project-top">
+            <span class="tag-gold">HTML5 • CSS3 • UI/UX</span>
+            <span class="year-silver">2026</span>
+          </div>
+          <h3 class="project-title">LUXURY EDITORIAL PORTFOLIO</h3>
+          <p class="project-desc">
+            Designed and engineered a responsive personal resume interface featuring custom CSS variables, Flexbox/Grid layouts, and interactive optical depth-of-field focus controls.
+          </p>
+        </article>
+
+        <article class="project-subcard">
+          <div class="project-top">
+            <span class="tag-gold">DIGITAL BUSINESS • ANALYTICS</span>
+            <span class="year-silver">2025</span>
+          </div>
+          <h3 class="project-title">D2C MARKET ENTRY BLUEPRINT</h3>
+          <p class="project-desc">
+            Formulated a go-to-market financial model, customer acquisition funnel, and unit economics framework for a sustainable consumer lifestyle brand.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 4: Aperture Skills & Education Split -->
+    <div class="split-row">
+      <section id="skills" class="focus-card" tabindex="0">
+        <span class="corner-tl"></span><span class="corner-tr"></span>
+        <span class="corner-bl"></span><span class="corner-br"></span>
+
+        <div class="section-header">
+          <span class="frame-index">03 // CAPABILITIES</span>
+          <h2 class="silian-heading">CORE COMPETENCIES</h2>
+        </div>
+
+        <div class="aperture-grid">
+          <div class="aperture-chip">HTML5 & Semantic Markup</div>
+          <div class="aperture-chip">CSS3, Flexbox & Grid</div>
+          <div class="aperture-chip">Git & GitHub Pages</div>
+          <div class="aperture-chip">UI/UX Wireframing</div>
+          <div class="aperture-chip">Business Strategy</div>
+          <div class="aperture-chip">Financial Modeling</div>
+          <div class="aperture-chip">Market Research</div>
+          <div class="aperture-chip">Data Visualization</div>
+        </div>
+      </section>
+
+      <section id="education" class="focus-card" tabindex="0">
+        <span class="corner-tl"></span><span class="corner-tr"></span>
+        <span class="corner-bl"></span><span class="corner-br"></span>
+
+        <div class="section-header">
+          <span class="frame-index">04 // ACADEMICS</span>
+          <h2 class="silian-heading">EDUCATION</h2>
+        </div>
+
+        <div class="edu-block">
+          <span class="date-badge">2024 – 2027</span>
+          <h3 class="role-title">BBA IN DIGITAL BUSINESS & ENTREPRENEURSHIP</h3>
+          <p class="org-name">Indian Institute of Management Bangalore (IIMBx)</p>
+          <p class="edu-note">Coursework: Website Development, Digital Marketing, Financial Accounting, Business Analytics.</p>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="dossier-footer">
+    <p>© 2026 I.K.A — CRAFTED WITH PRECISION IN RED VELVET, GOLD & SILVER</p>
+  </footer>
+
+  <!-- Interactive Portrait Lens Focus Script -->
+  <script>
+    const cards = document.querySelectorAll('.focus-card');
+    const container = document.getElementById('resume-container');
+    const toggleBtn = document.getElementById('focus-toggle');
+    const statusText = document.getElementById('focus-status');
+
+    let portraitMode = true;
+    container.classList.add('portrait-active');
+
+    function setFocusedCard(targetCard) {
+      if (!portraitMode) return;
+      cards.forEach(card => card.classList.remove('is-focused'));
+      targetCard.classList.add('is-focused');
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => setFocusedCard(card));
+      card.addEventListener('click', () => setFocusedCard(card));
+      card.addEventListener('focus', () => setFocusedCard(card));
+    });
+
+    toggleBtn.addEventListener('click', () => {
+      portraitMode = !portraitMode;
+      if (portraitMode) {
+        container.classList.add('portrait-active');
+        statusText.textContent = 'PORTRAIT FOCUS: ON';
+        toggleBtn.classList.remove('is-off');
+      } else {
+        container.classList.remove('portrait-active');
+        cards.forEach(card => card.classList.remove('is-focused'));
+        statusText.textContent = 'PORTRAIT FOCUS: OFF';
+        toggleBtn.classList.add('is-off');
+      }
+    });
+  </script>
+</body>
+</html>

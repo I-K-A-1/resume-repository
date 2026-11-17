@@ -1,0 +1,512 @@
+/* =========================================================
+   I.K.A LUXURY EDITORIAL PORTFOLIO
+   Palette: Red Velvet, Metallic Gold, Brushed Silver, Off-White, Slate Gray
+   Primary Typography: Cormorant Garamond (Silian Rail Aesthetic)
+   ========================================================= */
+
+:root {
+  /* Primary Colors */
+  --velvet-deep: #2B0303;
+  --velvet-card: #420608;
+  --velvet-highlight: #59090C;
+  --gold-primary: #D4AF37;
+  --gold-light: #F3E5AB;
+  --gold-dark: #997A15;
+  --silver-primary: #C0C0C0;
+  --silver-muted: #9E9E9E;
+
+  /* Secondary Colors */
+  --off-white: #FAF8F5;
+  --slate-gray: #1E1E20;
+  --soft-gray: #D8D6D2;
+
+  /* Fonts */
+  --font-primary: 'Cormorant Garamond', Georgia, serif;
+  --font-readable: 'Plus Jakarta Sans', sans-serif;
+
+  /* Transitions */
+  --lens-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top center, #4A0709 0%, var(--velvet-deep) 55%, var(--slate-gray) 100%);
+  color: var(--off-white);
+  font-family: var(--font-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle Centered Monogram Watermark */
+.watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-primary);
+  font-size: clamp(7rem, 22vw, 18rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--silver-primary);
+  opacity: 0.045;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   CAMERA VIEWFINDER HUD NAVIGATION
+   ========================================================= */
+#viewfinder-hud {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(30, 30, 32, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+}
+
+.nav-container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.rec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gold-primary);
+  box-shadow: 0 0 8px var(--gold-primary);
+}
+
+.monogram-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+}
+
+.lens-spec {
+  font-family: var(--font-readable);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--silver-primary);
+  border-left: 1px solid var(--silver-muted);
+  padding-left: 0.65rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--silver-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--gold-light);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--gold-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.aperture-btn {
+  background: linear-gradient(135deg, rgba(66, 6, 8, 0.9), rgba(30, 30, 32, 0.95));
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-light);
+  font-family: var(--font-readable);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 0.45rem 0.9rem;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: var(--lens-transition);
+}
+
+.aperture-btn:hover {
+  background: var(--gold-primary);
+  color: var(--velvet-deep);
+}
+
+.aperture-btn.is-off {
+  border-color: var(--silver-muted);
+  color: var(--silver-primary);
+}
+
+/* =========================================================
+   MAIN DOSSIER LAYOUT & PORTRAIT CAMERA BOKEH EFFECT
+   ========================================================= */
+.dossier-wrapper {
+  max-width: 980px;
+  margin: 2.5rem auto 4rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.focus-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(66, 6, 8, 0.92), rgba(43, 3, 3, 0.96));
+  border: 1px solid rgba(192, 192, 192, 0.28);
+  padding: 2.25rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+  transition: var(--lens-transition);
+  outline: none;
+}
+
+/* Portrait Mode Active: Blur & Dim Unfocused Cards */
+.dossier-wrapper.portrait-active .focus-card {
+  filter: blur(3px);
+  opacity: 0.52;
+  transform: scale(0.99);
+}
+
+/* Locked-On Focal Target: Crisp Focus + Gold Lining */
+.dossier-wrapper.portrait-active .focus-card.is-focused,
+.focus-card:hover {
+  filter: blur(0px);
+  opacity: 1;
+  transform: scale(1.01);
+  border-color: var(--gold-primary);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 175, 55, 0.18);
+  background: linear-gradient(145deg, rgba(89, 9, 12, 0.95), rgba(43, 3, 3, 0.98));
+}
+
+/* Camera Viewfinder Gold Corner Brackets */
+.corner-tl, .corner-tr, .corner-bl, .corner-br {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--gold-primary);
+  border-style: solid;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.corner-tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.corner-tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+.corner-bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+.corner-br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+.focus-card.is-focused .corner-tl,
+.focus-card.is-focused .corner-tr,
+.focus-card.is-focused .corner-bl,
+.focus-card.is-focused .corner-br,
+.focus-card:hover .corner-tl,
+.focus-card:hover .corner-tr,
+.focus-card:hover .corner-bl,
+.focus-card:hover .corner-br {
+  opacity: 1;
+}
+
+/* =========================================================
+   TYPOGRAPHY & SILIAN RAIL HEADINGS
+   ========================================================= */
+.eyebrow, .frame-index {
+  font-family: var(--font-readable);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--silver-primary);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.silian-title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: linear-gradient(to right, var(--gold-light), var(--gold-primary), var(--silver-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--soft-gray);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+}
+
+.summary-text {
+  font-family: var(--font-readable);
+  font-size: 0.96rem;
+  font-weight: 300;
+  color: var(--off-white);
+  max-width: 78ch;
+  margin-bottom: 1.5rem;
+}
+
+.section-header {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.silian-heading {
+  font-family: var(--font-primary);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* Contact Pills */
+.contact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.silver-pill {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-readable);
+  font-size: 0.8rem;
+  color: var(--off-white);
+  background: rgba(30, 30, 32, 0.75);
+  border: 1px solid rgba(192, 192, 192, 0.4);
+  padding: 0.45rem 0.9rem;
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
+}
+
+a.silver-pill:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TIMELINE DEPTH RAIL (EXPERIENCE)
+   ========================================================= */
+.timeline {
+  border-left: 1px solid var(--silver-primary);
+  margin-left: 0.6rem;
+  padding-left: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-node {
+  position: absolute;
+  left: -2.12rem;
+  top: 0.35rem;
+  width: 11px;
+  height: 11px;
+  background: var(--gold-primary);
+  border: 2px solid var(--velvet-deep);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+.date-badge {
+  font-family: var(--font-readable);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--gold-primary);
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.role-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--off-white);
+}
+
+.org-name {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--silver-primary);
+  margin-bottom: 0.6rem;
+}
+
+.detail-list {
+  padding-left: 1.2rem;
+  font-family: var(--font-readable);
+  font-size: 0.9rem;
+  color: var(--soft-gray);
+}
+
+.detail-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* =========================================================
+   PROJECTS GRID & SPLIT ROW
+   ========================================================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-subcard {
+  background: rgba(30, 30, 32, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 1.4rem;
+  transition: border-color 0.3s ease;
+}
+
+.project-subcard:hover {
+  border-color: var(--gold-primary);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.tag-gold {
+  font-family: var(--font-readable);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-primary);
+  font-weight: 600;
+}
+
+.year-silver {
+  font-family: var(--font-readable);
+  font-size: 0.75rem;
+  color: var(--silver-primary);
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--off-white);
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-family: var(--font-readable);
+  font-size: 0.88rem;
+  color: var(--soft-gray);
+}
+
+/* Split Row for Skills & Education */
+.split-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.aperture-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.aperture-chip {
+  font-family: var(--font-readable);
+  font-size: 0.8rem;
+  color: var(--off-white);
+  background: rgba(30, 30, 32, 0.7);
+  border: 1px solid rgba(192, 192, 192, 0.35);
+  padding: 0.45rem 0.85rem;
+  transition: all 0.25s ease;
+}
+
+.aperture-chip:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+.edu-note {
+  font-family: var(--font-readable);
+  font-size: 0.88rem;
+  color: var(--soft-gray);
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.dossier-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(192, 192, 192, 0.2);
+  font-family: var(--font-readable);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: var(--silver-muted);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 680px) {
+  .nav-links {
+    display: none;
+  }
+  .focus-card {
+    padding: 1.5rem;
+  }
+}
